@@ -1,5 +1,5 @@
 baseURL = 'https://sinsehwan.github.io/'
-languageCode = 'en-us'
+languageCode = 'ko-kr'
 title = 'My website'
 theme = 'typo'
 
@@ -71,7 +71,7 @@ url = "/about"
 # Syntax highlight on code blocks
 [markup]
 [markup.highlight]
-style = 'algol'
+style = 'dracula'
 
 # Giscus comments
 [params.giscus]
