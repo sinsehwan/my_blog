@@ -21,10 +21,9 @@ hideHeader = false
 customCSS = ["css/custom.css"]
 
 # Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
+homeIntroTitle = '안녕하세요!'
 homeIntroContent = """
-I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
-I am interested in a range of topics, including algorithms, distributed systems, databases, and information retrieval.
+Spring Boot의 객체지향적 장점을 좋아하고 이를 잘 활용하고자 하는 백엔드 개발자입니다. 어려운 구현사항을 해결해보고 싶은 기능들로 분할하고 누구나 읽기 쉬운 하나의 문서를 만든다는 관점으로 프로그래밍에 임하려고 합니다.
 """
 
 # Collection to display on home

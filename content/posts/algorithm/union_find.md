@@ -4,7 +4,7 @@ author: "Sin SeHwan"
 #authorAvatarPath: "/avatar.jpeg"
 date: "2025-07-25"
 summary: "Union-Find (분리집합) - Java"
-description: "An LSM Tree overview and Java implementation."
+description: "Union-Find (분리집합) - Java"
 toc: true
 readTime: true
 autonumber: true
@@ -143,7 +143,7 @@ nodeRank가 같다면 아무 쪽에 병합해도 상관없습니다. 대신, 병
 
 ## 백준 1717 - 집합의 표현
 
-- Union-Find 유형의 대표문제를 풀어봅시다!
+- Union-Find 유형의 대표 문제를 풀어봅시다!
 
 [백준 1717 - 집합의 표현](https://www.acmicpc.net/problem/1717)
 
