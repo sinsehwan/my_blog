@@ -1,10 +1,10 @@
 ---
-title: "Algorithm - Binary Search"
+title: "Algorithm - Binary Search - 1편"
 author: "Sin SeHwan"
 #authorAvatarPath: "/avatar.jpeg"
-date: "2025-07-26"
-summary: "Binary Search (이진 탐색) - Java"
-description: "Binary Search (이진 탐색) - Java"
+date: "2025-07-27"
+summary: "Binary Search (이진 탐색)[1] - Java"
+description: "Binary Search (이진 탐색)[1] - Java"
 toc: true
 readTime: true
 autonumber: true
@@ -15,7 +15,7 @@ hideBackToTop: false
 fediverse: "@username@instance.url"
 ---
 
-# Binary Search (이진 탐색)
+# Binary Search (이진 탐색) - 1편
 
 > 이번 시간에는 'Binary Search' 알고리즘을 살펴보겠습니다. 구간을 이분법적으로 쪼개면서 값을 탐색하는 알고리즘입니다. 알고리즘 교과목의 맨 처음 등장하는 주제이지만, 조금의 응용이 들어가면 상당히 어려워지는 주제이기도 합니다. 또한 적용할 수 있는 경우가 상당히 다양하기에, 꼭 알아둬야 하는 알고리즘이기도 합니다. 개념을 훑어보고, 문제를 살펴보면서 이해해봅시다.
 
@@ -111,6 +111,9 @@ mid = st + (en - st) / 2;
 크게 두 가지 방식이 있는데, 두 번째 방식이 overflow에 더 안전합니다. 만약 en을 Integer.MAX_VALUE로 설정해야 하는 상황에 첫 번째 방식을 적용하면 overflow가 발생할 수 있습니다. 
 
 ### 풀이
+
+전형적인 이진 탐색 문제입니다. 수가 존재하는지 탐색하고, 존재한다면 1을, 존재하지 않으면 0을 출력하면 됩니다.
+
 
 ```java
 import java.io.*;
@@ -366,96 +369,4 @@ System.out.println(getUpperBound(100) - getLowerBound(100))
 
 즉, getLowerBound, getUpperBound를 사용하면 조건을 만족하는 원소 개수, 상한 경계, 하한 경계 모두 구할 수 있습니다.
 
-## 백준 10816 - 숫자 카드 2
-
-매개 변수 탐색 알고리즘을 활용해서 다음 문제를 풀어봅시다!
-
-[백준 10816 - 숫자 카드 2](https://www.acmicpc.net/problem/10816)
-```java
-import java.io.*;
-import java.util.*;
-
-public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-    int n, m;
-
-    int[] card;
-    int[] question;
-
-    public static void main(String[] args) throws IOException {
-        new Main().solve();
-
-        br.close();
-        bw.close();
-    }
-
-    void solve() throws IOException {
-        getInput();
-
-        for(int q : question) {
-            int count = getUpperBound(q) - getLowerBound(q);
-            bw.write(count + " ");
-        }
-    }
-
-    // target이 들어갈 수 있는 최소 인덱스
-    // 조건을 만족하는 최소 인덱스.
-    int getLowerBound(int target) {
-        int st = 0;
-        int en = n;
-
-        while(st < en) {
-            int mid = st + (en - st) / 2;
-
-            if(card[mid] < target) {
-                st = mid + 1;
-            }
-            else {
-                // card[mid] >= target
-                // mid를 포함.
-                en = mid;
-            }
-        }
-
-        return st;
-    }
-
-    // target보다 큰 최소 인덱스
-    // 조건을 만족하는 최대 인덱스 다음 위치
-    int getUpperBound(int target) {
-        int st = 0;
-        int en = n;
-
-        while(st < en) {
-            int mid = st + (en - st) / 2;
-
-            if(card[mid] <= target) {
-                st = mid + 1;
-            }
-            else {
-                en = mid;
-            }
-        }
-
-        return st;
-    }
-
-    void getInput() throws IOException {
-        n = Integer.parseInt(br.readLine());
-
-        card = Arrays.stream(br.readLine().split(" "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-
-        Arrays.sort(card);
-
-        m = Integer.parseInt(br.readLine());
-
-        question = Arrays.stream(br.readLine().split(" "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-    }
-}
-```
+상당히 유용하게 사용할 수 있겠다는 생각이 들지 않나요? 다만, 내용이 길어져서, 예제 문제 풀이는 다음 페이지에서 진행하겠습니다.

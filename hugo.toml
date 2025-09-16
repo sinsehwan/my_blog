@@ -1,6 +1,6 @@
 baseURL = 'https://sinsehwan.github.io/'
 languageCode = 'ko-kr'
-title = 'My website'
+title = "Sehwan's Dev Retrospect"
 theme = 'typo'
 
 # Google analytics code
@@ -8,6 +8,7 @@ googleAnalytics = "G-xxxxxxxxx"
 
 [taxonomies]
 tag = 'tags'
+category = 'categories'
 
 [params]
 # Meta description
@@ -62,6 +63,10 @@ url = "/"
 [[params.menu]]
 name = "posts"
 url = "/posts"
+
+[[params.menu]]
+name = "tags"
+url = "/tags/"
 
 [[params.menu]]
 name = "about"
