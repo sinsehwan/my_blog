@@ -1,8 +1,8 @@
 ---
-title: "ORM(JPA)의 필요성"
+title: "ORM(JPA)의 필요성 - 1"
 author: "Sin SeHwan"
 #authorAvatarPath: "/avatar.jpeg"
-date: "2025-09-16"
+date: "2025-10-10"
 summary: "SQL을 직접 다룰 때 발생하는 문제점"
 description: "SQL을 직접 다룰 때 발생하는 문제점 - backend"
 toc: true
@@ -29,7 +29,7 @@ fediverse: "@username@instance.url"
 
 - 스프링 진영에서도 스프링 데이터 JPA라는 기술로 JPA를 지원합니다.
 
-> 객체와 관게형 데이터베이스 간의 간극이란 뭘 말하는 것일까요? 먼저 순수 SQL을 직접 다룰 때 발생하는 문제점을 살펴봅시다
+> 객체와 관계형 데이터베이스 간의 간극이란 뭘 말하는 것일까요? 먼저 순수 SQL을 직접 다룰 때 발생하는 문제점을 살펴봅시다
 
 ## SQL을 직접 다룰 때 발생하는 문제점
 
@@ -51,14 +51,14 @@ Java에서 SQL을 직접 다루는 경우를 먼저 살펴봅시다. 이를 위�
 > Member.class
 ```java
 public class Member {
-    private String memberId;
+    private Long memberId;
     private String name;
 }
 ```
 > MemberDAO.class
 ```java
 public class MemberDAO {
-    public Member find(String memberId) {
+    public Member find(Long memberId) {
         // ...
     }
     public Member save(Member member) {
@@ -83,7 +83,7 @@ ResultSet rs = stmt.executeQuery(sql);
 
 3. 조회 결과 매핑
 ```java
-String memberId = rs.getString("member_id");
+String memberId = rs.getLong("member_id");
 String name = rs.getString("name")
 
 Member member = new Member(memberId, name)
@@ -98,7 +98,7 @@ String sql = "INSERT INTO member(member_id, name) VALUES (?, ?)"
 
 2. JDBC API
 ```java
-pstmt.setString(1, member.getMemberId())
+pstmt.setLong(1, member.getMemberId())
 pstmt.setString(2, member.getName())
 
 pstmt.execute(sql);
@@ -127,13 +127,14 @@ list.add(member);
 
 ```java
 class Member {
-    private String memberId;
+    private Long memberId;
     private String name;
     private String tel;
     private Team team; // 추가
 }
 
 class Team {
+    private Long teamId;
     private String teamName;
 }
 ```
