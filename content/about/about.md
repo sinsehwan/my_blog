@@ -61,6 +61,8 @@ fediverse: "@username@instance.url"
 
 ### RAG를 활용한 컨테이너 기반 마이크로서비스 운영 환경 관리 지원 시스템
 
+- [배포 주소](http://56.155.164.88:30080/)
+
 - Apache MINA SSHD 기반의 실시간 웹 터미널 구축
 - Spring Security, JWT 기반 사용자 인증 기능 개발
 - 로그 수집기 배포 기능 개발
