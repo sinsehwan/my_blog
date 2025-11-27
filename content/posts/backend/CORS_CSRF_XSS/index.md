@@ -62,7 +62,7 @@ Access-Control-Allow-Methods: POST
 Access-Control-Allow-Headers: Content-Type
 ```
 
-![alt text](<preflight.png>)
+![alt text](<images/preflight.png>)
 
 #### 주요 헤더
 
@@ -85,7 +85,7 @@ Access-Control-Allow-Headers: Content-Type
 
 - SOP를 적용하더라도, 악의적인 요청을 보내는 것은 막지 못하기에, CSRF가 필요합니다.
 
-![alt text](<csrf.png>)
+![alt text](<images/csrf.png>)
 
 1. 사용자 로그인 (bank.com)
 2. 사용자가 공격자가 만든 주소(glgl.com)에 접속 (악성 email 등)
@@ -104,7 +104,7 @@ Access-Control-Allow-Headers: Content-Type
 
 ## XSS (Cross-Site Scripting) - 교차 사이트 스크립팅
 
-![alt text](<xss.png>)
+![alt text](<images/xss.png>)
 
 ### 방어 방법
 

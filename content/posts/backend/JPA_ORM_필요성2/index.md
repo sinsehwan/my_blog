@@ -61,7 +61,7 @@ class User extends Member {
 
 - DB 구조는 다음과 같이 구성할 수 있습니다.
 
-![상속_erd](상속_erd.png)
+![상속_erd](images/상속_erd.png)
 
 이 상황에서 Admin 객체를 저장하려면 객체를 분리해서 SQL문을 두 번 수행해야 합니다.
 

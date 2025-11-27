@@ -71,7 +71,7 @@ CREATE INDEX idx_user_email ON user_account(email);
 
 > N개의 키가 있을 때, 트리의 높이 d는 다음과 같습니다
 
-![alt text](image/DB_Index/mathlog.png)
+![alt text](images/mathlog.png)
 
 $$N \ge 2 \cdot \lceil m/2 \rceil^{d-1}$$
 
@@ -97,7 +97,7 @@ SELECT * FROM user_account
 WHERE id BETWEEN 100 AND 200;
 ```
 
-![](image/DB_Index/B+Tree.png)
+![](images/B+Tree.png)
 
 #### B-Tree, B+Tree 특징 비교
 
@@ -117,9 +117,9 @@ WHERE id BETWEEN 100 AND 200;
 
 ### 인덱스의 단점
 
-![](image/DB_Index/insert1.png)
+![](images/insert1.png)
 
-![](image/DB_Index/insert2.png)
+![](images/insert2.png)
 
 - 삽입, 삭제 시 DB 행(레코드) 외 Index 기반 B+Tree도 함께 업데이트해야 합니다.
 
